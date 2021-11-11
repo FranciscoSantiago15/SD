@@ -1,0 +1,130 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+* { margin: 0; padding: 0; } 
+html *
+{
+    font-family: "Poiret One" !important; 
+}
+
+
+body{
+	background-image: url("background2.png");
+	no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+h1
+{
+	text-align: left;
+    font-size: 85px;
+    overflow: hidden;
+    color: #166b4b;
+}
+
+h3
+{
+	text-align: center;
+	color: black;
+}
+
+#b1{
+	font-size: 25px;
+	background-color: #961d1d;
+	color: white;
+	border: none;
+    cursor: pointer;
+    border-radius:7px;
+    text-align: center;
+    top: 580px;
+    left: 25px;
+	
+}
+
+.vertical-menu {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	widht: 50px;
+	padding-top: 60px;
+}
+
+.vertical-menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.vertical-menu a:hover {
+    background-color: white;
+    color: black;
+}
+
+.vertical-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .vertical-menu {padding-top: 15px;}
+  .vertical-menu a {font-size: 15px;}
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.vertical-box {
+	padding: 5px 5px;
+    left: 25px;
+    background-color: white;
+    width: 700px;
+    height: 350px;
+    border: 5px;
+    margin-top: 5px;
+}
+
+.vertical-note {
+	position: absolute;
+    left: 405px;
+    top: 100px;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	h1{
+		width: 100%
+	}
+    .vertical-menu {
+       width: 100%;
+    }
+    .vertical-box {
+       width: 100%;
+    }
+    
+    #b1{
+		width: 100%
+	}
+}

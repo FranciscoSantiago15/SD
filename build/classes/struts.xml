@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The core configuration file for the framework is the default (struts.xml) file
+and should reside on the classpath of the webapp (generally /WEB-INF/classes). -->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+  <!-- devMode equals debug information and reload everything for every request -->
+  <constant name="struts.devMode" value="true" />
+  <constant name="struts.ui.theme" value="simple" />
+
+  <package name="hey" extends="struts-default">
+	
+	<default-action-ref name="index" />
+	
+
+	<!-- all exceptions not caught by the application will lead to error.jsp -->
+	<global-exception-mappings>
+		<exception-mapping exception="java.lang.Exception" result="error" />
+	</global-exception-mappings>
+
+	<!-- 'index' action leads to the view provided by index.jsp -->
+    <action name="index">
+      <result>/index.jsp</result>
+    </action>
+    
+    <!-- 'dropBox' action calls 'execute' in 'DropBoxAction' -->
+    <action name="dropBox" class="actions.DropBoxAction" method="execute">
+      <result name="success">/home.jsp</result>
+      <result name="login">/dropBox.jsp</result>
+      <result name="error">/index.jsp</result>
+    </action>
+    
+    <!-- 'dropBox' action calls 'execute' in 'DropBoxAction' -->
+    <action name="dropBoxList" class="actions.DropBoxAction" method="listFiles">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    
+
+	<!-- 'login' action calls 'execute' in 'LoginAction' -->
+    <action name="login" class="actions.LoginAction" method="execute">
+      <result name="success">/home.jsp</result>
+      <result name="login">/index.jsp</result>
+    </action>
+    
+    <!-- 'register' action calls 'execute' in 'RegisterAction' -->
+    <action name="register" class="actions.RegisterAction" method="execute">
+      <result name="success">/index.jsp</result>
+      <result name="login">/index.jsp</result>
+    </action>
+    
+    <!-- 'searchSong' action calls 'execute' in 'SearchSongAction' -->
+    <action name="searchSong" class="actions.SearchSongAction" method="execute">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'searchDetails' action calls 'execute' in 'SearchDetailsAction' -->
+    <action name="searchDetails" class="actions.SearchDetailsAction" method="execute">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'writeReview' action calls 'execute' in 'WriteReviewAction' -->
+    <action name="writeReview" class="actions.WriteReviewAction" method="execute">
+      <result name="success">/checkReview.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'givePrivilege' action calls 'execute' in 'GivePrivilegeAction' -->
+    <action name="givePrivilege" class="actions.GivePrivilegeAction" method="execute">
+      <result name="success">/checkPrivilege.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'criarAlbum' action calls 'execute' in 'CriarAlbumAction' -->
+    <action name="criarAlbum" class="actions.CriarAlbumAction" method="execute">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'criarMusica' action calls 'execute' in 'CriarMusicaAction' -->
+    <action name="criarMusica" class="actions.CriarMusicaAction" method="execute">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'editar' action calls 'execute' in 'EditarAction' -->
+    <action name="editar" class="actions.EditarAction" method="execute">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <!-- 'Apagar' action calls 'execute' in 'ApagarAction' -->
+    <action name="apagar" class="actions.ApagarAction" method="execute">
+      <result name="success">/itensFound.jsp</result>
+      <result name="login">/home.jsp</result>
+    </action>
+    
+    <action name="voltar">
+        <result>/home.jsp</result>
+    </action>
+    
+    <action name="exit" class="actions.Exit" method="execute">
+        <result name="success">/index.jsp</result>
+    </action>
+
+  </package>
+
+</struts>
